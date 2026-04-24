@@ -9,8 +9,7 @@ Interactive Three.js project for visualizing image and video data as:
 The project uses custom GLSL shaders to convert and display multiple color spaces and to map selected channel values to geometry elevation.
 
 ### showcase video 
-
-<video controls src="showcase.mp4" title="showcase"></video>
+https://github.com/user-attachments/assets/5822c9d0-660e-49c0-9096-35aee396cdb8
 
 
 
