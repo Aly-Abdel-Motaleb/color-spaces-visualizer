@@ -10,6 +10,10 @@ let gui;
 let updateDynamicMediaFrame = null;
 const scriptQueryParams = new URL(import.meta.url).searchParams;
 
+function getPageName() {
+	return window.location.pathname.split('/').pop()?.toLowerCase() ?? '';
+}
+
 function getInitialViewMode() {
 	const modeFromQuery = scriptQueryParams.get('mode') ?? new URLSearchParams(window.location.search).get('mode');
 	if (modeFromQuery === 'elevationMap' || modeFromQuery === 'pointCloud') {
@@ -72,8 +76,12 @@ function areLightControlsEnabled() {
 		return false;
 	}
 
-	const pageName = window.location.pathname.split('/').pop()?.toLowerCase();
-	return pageName === 'exercise3.html';
+	if (isElevationIntensityEnabled()) {
+		return true;
+	}
+
+	const pageName = getPageName();
+	return pageName === 'exercise3.html' || pageName === 'exercise_3.html';
 }
 
 function isLightHelperEnabled() {
@@ -85,23 +93,24 @@ function isLightHelperEnabled() {
 		return false;
 	}
 
-	const pageName = window.location.pathname.split('/').pop()?.toLowerCase();
-	return pageName === 'exercise3.html';
+	if (isElevationIntensityEnabled()) {
+		return true;
+	}
+
+	const pageName = getPageName();
+	return pageName === 'exercise3.html' || pageName === 'exercise_3.html';
 }
 
 function isScaleElevationControlEnabled() {
-	const pageName = window.location.pathname.split('/').pop()?.toLowerCase();
-	return pageName === 'elevationmap.html' || pageName === 'exercise3.html';
+	return getInitialViewMode() === 'elevationMap';
 }
 
 function isElevationChannelControlEnabled() {
-	const pageName = window.location.pathname.split('/').pop()?.toLowerCase();
-	return pageName === 'elevationmap.html' || pageName === 'exercise3.html';
+	return getInitialViewMode() === 'elevationMap';
 }
 
 function areAxesHelpersEnabled() {
-	const pageName = window.location.pathname.split('/').pop()?.toLowerCase();
-	return pageName !== 'elevationmap.html' && pageName !== 'exercise3.html';
+	return getInitialViewMode() !== 'elevationMap';
 }
 
 function isGridBoxEnabled() {

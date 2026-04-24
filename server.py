@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return send_from_directory(SERVE_DIR, "point-cloud-vr.html")
+    return send_from_directory(SERVE_DIR, "exercise1_vr.html")
 
 @app.route("/<path:filename>")
 def files(filename):

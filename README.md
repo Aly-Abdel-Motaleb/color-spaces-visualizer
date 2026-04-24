@@ -8,6 +8,13 @@ Interactive Three.js project for visualizing image and video data as:
 
 The project uses custom GLSL shaders to convert and display multiple color spaces and to map selected channel values to geometry elevation.
 
+### showcase video 
+
+<video src="showcase.mp4" controls width="900"></video>
+
+
+
+
 ## Implemented Exercises
 
 ### point cloud
@@ -61,47 +68,6 @@ Implemented features:
 - Color-space switching and elevation remapping.
 - Full media pipeline (image + video + uploads + blur).
 
-## XR Versions
-
-### cloud point vr
-
-
-Implemented features:
-
-- XR point-cloud visualization equivalent to exercise 1.
-- Manual XR start buttons for both VR and AR modes.
-- Session fallback logic (tries alternative mode if the preferred one fails).
-- Controller support with rays and controller models.
-- In-world interactive GUI panel rendered as HTMLMesh.
-- 3D preview plane for current media texture.
-
-### `exercise2_vr.html`
-Loads:
-
-- `script-vr.js?mode=elevationMap&intensity=off&lightControls=off&lightHelper=off`
-
-Implemented features:
-
-- XR elevation-map visualization equivalent to exercise 2.
-- Elevation mode world/view offsets for better headset framing.
-- Interactive in-world controls for color space, elevation channel, and elevation scale.
-- 3D preview plane updates with image/video inputs.
-
-### `exercise3_vr.html`
-Loads:
-
-- `script-vr.js?mode=elevationMap&intensity=on&lightX=-1&lightY=0&lightZ=4&lightIntensity=2`
-
-Implemented features:
-
-- XR elevation-map with intensity lighting equivalent to exercise 3.
-- In-XR light controls and helper toggle available through interactive panel.
-- AR compatibility behavior:
-	- transparent clear path for passthrough-capable sessions
-	- emulator-safe fallback for opaque blend environments
-- World alignment logic to place content in front of the headset and calibrate orientation.
-
-
 ## Run Instructions
 
 ### Desktop mode
@@ -115,5 +81,3 @@ Implemented features:
 2. Open `exercise1_vr.html`, `exercise2_vr.html`, or `exercise3_vr.html` from the server URL.
 3. connect to headset and start a VR or AR session using the in-page buttons.
 
-# color-spaces-visualizer
-# color-spaces-visualizer
