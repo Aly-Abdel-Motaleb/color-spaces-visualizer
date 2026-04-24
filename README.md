@@ -10,8 +10,7 @@ The project uses custom GLSL shaders to convert and display multiple color space
 
 ### showcase video 
 
-<video src="showcase.mp4" controls width="900"></video>
-
+<video controls src="showcase.mp4" title="showcase"></video>
 
 
 
